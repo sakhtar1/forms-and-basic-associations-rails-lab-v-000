@@ -23,6 +23,7 @@ class Song < ActiveRecord::Base
     notes.each do |note|
        song = Song.find(note)
        self.notes << note if note.strip != ''
+     end
   end
 
   def note_contents
