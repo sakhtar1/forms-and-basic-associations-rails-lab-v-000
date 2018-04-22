@@ -22,7 +22,9 @@ class Song < ActiveRecord::Base
   def note_contents=(notes)
     notes.each do |note|
        song = Song.find_or_create_by(id: id)
-       self.notes << note if note.strip != ''
+       if note.strip != ''
+         self.notes << note 
+       end
      end
   end
 
